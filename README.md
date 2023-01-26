@@ -77,7 +77,7 @@ All markdown header marks and spaces will be excluded, but the text of headers w
 
 ### Comments
 
-All markdown header comment marks(%%) will be excluded, and the comment text inside the %% marks will be excluded as well.
+All markdowncomment marks(%%) will be excluded, and the comment text inside the %% marks will be excluded as well.
 
 **Example**
 
