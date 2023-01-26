@@ -1,4 +1,4 @@
-# A JavaScript funtion for markdown word counting without grammar marks
+# A JavaScript function for markdown word counting without grammar marks
 
 ## Introduction
 
