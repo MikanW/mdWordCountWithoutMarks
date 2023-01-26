@@ -85,14 +85,9 @@ All markdown header comment marks(%%) will be excluded, and the comment text ins
 
 | Input string | Output length            |
 | ------------ | ------------------------ |
-| "# Header"   | 6  // Length of "Header" |
-| "### Header" | 6  // Length of "Header" |
+| "%% Example Comments %%"   | 0 |
 
 
-
-**Input string**: "%% Example Comments %%"
-
-**Output length**: 0
 
 ---
 
