@@ -28,21 +28,19 @@ console.log(wordcount); // Length of "Header1Header2TextTextText"
 
 ### YAML Frontmatter
 
-All meta data inside the frontmatter marks will be excluded.
+All meta data inside the frontmatter marks will be excluded. 
 
 **Example**
 
-**Input string**
+| Input string                                                 | Output length |
+| ------------------------------------------------------------ | ------------- |
+| "---\n<br/>Title: Example.md\n<br/>created: 2023-01-25\n<br/>modified: 2023-01-26\n<br/>---" | 0             |
 
-"---\n
-Title: Example.md\n
-created: 2023-01-25\n
-modified: 2023-01-26\n
----"
 
-**Output length**: 0
 
 ---
+
+
 
 ### Enter (\n)
 
@@ -50,9 +48,15 @@ All "\n" will be excluded in wordcounting.
 
 **Example**
 
-**Input string**: "1\n2\n3\n"
 
-**Output length**: 3 Length of "123"
+
+| Input string | Output length         |
+| ------------ | --------------------- |
+| "1\n2\n3\n"  | 3  // Length of "123" |
+
+
+
+
 
 ---
 
@@ -60,16 +64,14 @@ All "\n" will be excluded in wordcounting.
 
 All markdown header marks and spaces will be excluded, but the text of headers will be included in the wordcount.
 
-
 **Example**
 
-**Input string**: "# Header"
+| Input string | Output length            |
+| ------------ | ------------------------ |
+| "# Header"   | 6  // Length of "Header" |
+| "### Header" | 6  // Length of "Header" |
 
-**Output length**: 6 // Length of "Header"
 
-**Input string**: "### Header"
-
-**Output length**: 6 // Length of "Header"
 
 ---
 
@@ -77,8 +79,16 @@ All markdown header marks and spaces will be excluded, but the text of headers w
 
 All markdown header comment marks(%%) will be excluded, and the comment text inside the %% marks will be excluded as well.
 
-
 **Example**
+
+
+
+| Input string | Output length            |
+| ------------ | ------------------------ |
+| "# Header"   | 6  // Length of "Header" |
+| "### Header" | 6  // Length of "Header" |
+
+
 
 **Input string**: "%% Example Comments %%"
 
@@ -90,12 +100,15 @@ All markdown header comment marks(%%) will be excluded, and the comment text ins
 
 All wiki link marks([[]]) will be excluded, but the link text inside the [[]] marks included in the wordcount.
 
-
 **Example**
 
-**Input string**: "[[ExampleLink]]"
 
-**Output length**: 11 // Length of "ExampleLink"
+
+| Input string      | Output length                 |
+| ----------------- | ----------------------------- |
+| "[[ExampleLink]]" | 11 // Length of "ExampleLink" |
+
+
 
 
 ---
@@ -107,20 +120,15 @@ All Marks of Bord(**text**), Italics(*text*), Highlight(==text==), Delete(~~text
 But text inside the format marks will be included in the wordcount.
 
 
+
 **Example**
 
-**Input string**: "**text**"
 
-**Output length**: 4 // Length of "text"
 
-**Input string**: "*text*"
+| Input string | Output length         |
+| ------------ | --------------------- |
+| "**text**"   | 4 // Length of "text" |
+| "*text*"     | 4 // Length of "text" |
+| "==text=="   | 4 // Length of "text" |
+| "~~text~~"   | 4 // Length of "text" |
 
-**Output length**: 4 // Length of "text"
-
-**Input string**: "==text=="
-
-**Output length**: 4 // Length of "text"
-
-**Input string**: "~~text~~"
-
-**Output length**: 4 // Length of "text"
