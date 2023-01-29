@@ -10,7 +10,8 @@ let getWordCount = (text) => {
 
     // exclude YAML Frontmatter (---\n YAML Frontmatter \n---)
     // all meta data inside the frontmatter marks will be excluded
-    text = text.replace(/---.*---/msg, "");
+    text = text.replace(/---.*?:\s.*?---/ms, "");
+    allText = allText.replace(/---/g, "");
 
     // exclude enter (\n)
     text = text.replace(/\n*/msg, "");
@@ -21,7 +22,9 @@ let getWordCount = (text) => {
 
     // exclude markdown comment (%% comment text %%)
     // all comment text inside the comment marks will be excluded
-    text = text.replace(/%%.*%%/msg, "");
+    while ( allText.indexOf("%%") !== -1 ) {
+        allText = allText.replace(/%%.*?%%/msg, "");
+    }
 
     // exclude wiki link marks ([[text]])
     // text inside the [[]] mark will be included in the wordcount
