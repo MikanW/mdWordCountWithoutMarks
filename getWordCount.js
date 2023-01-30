@@ -22,9 +22,7 @@ let getWordCount = (text) => {
 
     // exclude markdown comment (%% comment text %%)
     // all comment text inside the comment marks will be excluded
-    while ( allText.indexOf("%%") !== -1 ) {
-        allText = allText.replace(/%%.*?%%/msg, "");
-    }
+       allText = allText.replace(/%%.*?%%/msg, "");
 
     // exclude wiki link marks ([[text]])
     // text inside the [[]] mark will be included in the wordcount
